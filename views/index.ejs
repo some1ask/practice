@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
+<% include layout/header.ejs %>
     <h1>ZDAROVA JIRNIU PIDOR    </h1>
-    <a href="/post">safasf</a>
-    <ul>
-        <% announcements.forEach(function(announcement){ %>
-            <li>
-                <b><%=announcement.title%></b>
-            <br>
-            <%=announcement.body %>
-        </li>
-        <% }); %>
-    </ul>
-</body>
-</html>
+  
+<% include layout/footer.ejs %>
