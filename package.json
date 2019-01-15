@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
+    "start": "cross-env PORT=3000 node index.js",
     "dev": "nodemon index.js"
   },
   "devDependencies": {
@@ -16,6 +16,10 @@
     "node": ">=6.0.0"
   },
   "dependencies": {
-    "express": "^4.16.4"
+    "body-parser": "^1.18.3",
+    "cross-env": "^5.2.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.4"
   }
 }
