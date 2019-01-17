@@ -15,7 +15,8 @@ header {
   flex-direction: row;
   border: 2px solid green;
   box-sizing: content-box;
-  padding: 0 20px; }
+  padding: 0 20px;
+  position: relative; }
 
 .container {
   border: 1px solid black;
@@ -23,14 +24,12 @@ header {
   flex-direction: row;
   flex-basis: 80%; }
 
-.regform {
-  flex-basis: 20%;
-  border: 1px solid red;
-  display: flex;
-  font-size: 18px;
-  font-style: bold;
-  position: relative; }
-  .regform form {
+.forms {
+  display: flex; }
+  .forms form {
+    position: relative;
+    font-size: 18px;
+    font-style: bold;
     height: 300px;
     box-sizing: border-box;
     background: rgba(255, 255, 255, 0.4);
@@ -38,12 +37,12 @@ header {
     text-align: center;
     border: 1px solid white;
     border-radius: 5%; }
-    .regform form input {
+    .forms form input {
       font-size: 18px;
       font-style: bold;
       padding: 0 10px;
       border-radius: 5%; }
-    .regform form button {
+    .forms form button {
       padding: 10px 20px;
       font-weight: 300;
       font-size: 18px;
@@ -51,8 +50,11 @@ header {
       background: #FA8072;
       border: none;
       margin-top: 10px; }
-      .regform form button:hover {
+      .forms form button:hover {
         cursor: pointer; }
+
+.regform {
+  display: none; }
 
 footer {
   position: fixed;
@@ -60,7 +62,8 @@ footer {
   width: 100%;
   display: flex;
   justify-content: center;
-  text-align: center; }
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid blue; }
 
 * {
   margin: 0;
