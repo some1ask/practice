@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "cross-env PORT=3000 node index.js",
-    "dev": "nodemon index.js"
+    "start": "cross-env PORT=3000 node app.js",
+    "dev": "nodemon app.js"
   },
   "devDependencies": {
     "eslint": "^5.12.0",
@@ -16,6 +16,7 @@
     "node": ">=6.0.0"
   },
   "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.18.3",
     "cross-env": "^5.2.0",
     "ejs": "^2.6.1",
