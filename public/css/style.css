@@ -15,7 +15,6 @@ header {
   flex-direction: row;
   border: 2px solid green;
   box-sizing: content-box;
-  padding: 0 20px;
   position: relative; }
 
 .container {
@@ -55,6 +54,22 @@ header {
 
 .regform {
   display: none; }
+
+.error {
+  position: relative;
+  text-align: center;
+  background-color: #FA8072;
+  padding: 10px 10px;
+  border-radius: 5%;
+  margin-top: 10px; }
+
+.success {
+  position: relative;
+  text-align: center;
+  background-color: lightgreen;
+  padding: 10px 10px;
+  border-radius: 5%;
+  margin-top: 10px; }
 
 footer {
   position: fixed;

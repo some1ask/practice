@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt-nodejs');
 
 /*eslint-unable */
 
-
+//post register
 router.post('/register',(req,res) => {
     const login = req.body.login;
     const password = req.body.password;
@@ -36,11 +36,41 @@ router.post('/register',(req,res) => {
             }).catch(err=>{
                 res.json({
                     ok:false,
-                    error:"Попробуйте позже"
+                    error:"Пользователь с таким именем уже существует"
                 })
             })
         })
     }
 });
 
+//post login
+router.post('/login',(req,res) => {
+    const login = req.body.login;
+    const password = req.body.password;
+    if(!login || !password){
+        res.json({
+            ok:false,
+            error:"Все поля должны быть заполнены",
+            fields:['login','passsword']
+        })
+    }else{
+        model.User.findOne({
+            login
+        }).then(user=>{
+            if(!user){
+              res.json({
+                  ok:false,
+                  error: "Логин и пароль неверны!",
+                  fields:['login','password']
+              })  
+            }else{
+                bcrypt.compare(password,user.password,function(err,result){
+                    console.log(result);
+                })
+            }
+        }).catch(err=>{
+            console.log(err);
+        })
+    }
+});
 module.exports = router;
