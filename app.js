@@ -6,7 +6,9 @@ const path = require('path');
 const mongoose = require('mongoose');
 const config = require('./config');
 const routes = require('./routes');
-//const Announcement = require('./models/announcement');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+
 //database 
 mongoose.Promise = global.Promise;
 mongoose.set('debug',true);
@@ -28,14 +30,29 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.set('view engine','ejs');
 app.use(express.static(path.join(__dirname ,'public')));
-
+app.use(session({
+  secret: config.SESSION_SECRET,
+  resave:true,
+  saveInitialized:false,
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection
+  })
+}))
 
 //routes
 app.listen(config.PORT, function () {
       console.log('Example app listening on port '+ config.PORT+ '!');
     });
 app.get('/', function (req, res) {
-  res.render('index');
+  const id = req.session.userId;
+  const login = req.session.userLogin;
+
+  res.render('index',{
+    user:{
+      id,
+      login
+    }
+  });
 });
 app.use('/api/auth', routes.auth)
 

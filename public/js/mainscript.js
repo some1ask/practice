@@ -1,10 +1,11 @@
 /* eslint-disable no-undef */
 
-$(document).ready(function(){
 //form swithcer
+$('p.error').remove();
   var flag = true;
   $(".switch-button").on('click',function(e){
     e.preventDefault();
+    $('p.error').remove();
     if(flag){
       flag = false;
       $(".logform").hide();
@@ -17,7 +18,9 @@ $(document).ready(function(){
     }
   })
 
-
+  $('input').on('focus',function(){
+    $('p.error').remove();
+  })
 //reg script
 $(".register-button").on('click',function(e){
   e.preventDefault();
@@ -29,9 +32,7 @@ $(".register-button").on('click',function(e){
   };
   console.log(data);
 
-  $('input').on('focus',function(){
-    $('p.error').remove();
-  })
+ 
 
   $.ajax({
     type:'POST',
@@ -40,10 +41,12 @@ $(".register-button").on('click',function(e){
     url:'api/auth/register'
   }).done(function(data){
       if(!data.ok){
-        $('[name = "register_form"').after('<p class="error">' + data.error + '</p>');
+        $('.register-button').after('<p class="error">' + data.error + '</p>');
+        
       }
       else{
-        $('[name = "register_form"').after('<p class="success">Спасибо за регистрацию</p>');
+       // $('.register-button').after('<p class="success">Спасибо за регистрацию</p>');
+        $(location).attr('href','/');
       }
   });
 });
@@ -69,12 +72,12 @@ $(".login-button").on('click',function(e){
     url:'api/auth/login'
   }).done(function(data){
       if(!data.ok){
-        $('[name = "login_form"').after('<p class="error">' + data.error + '</p>');
+        $('.login-button').after('<p class="error">' + data.error + '</p>');
       }
       else{
-        $('[name = "login_form"').after('<p class="success">Спасибо за регистрацию</p>');
+        // $('.login-button').after('<p class="success">Спасибо за регистрацию</p>');
+        $(location).attr('href','/');
       }
   });
 })
-});
   /* eslint-unable no-undef */

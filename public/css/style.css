@@ -29,7 +29,6 @@ header {
     position: relative;
     font-size: 18px;
     font-style: bold;
-    height: 300px;
     box-sizing: border-box;
     background: rgba(255, 255, 255, 0.4);
     padding: 20px 20px;
@@ -59,7 +58,6 @@ header {
   position: relative;
   text-align: center;
   background-color: #FA8072;
-  padding: 10px 10px;
   border-radius: 5%;
   margin-top: 10px; }
 
