@@ -54,7 +54,8 @@ app.get('/', function (req, res) {
     }
   });
 });
-app.use('/api/auth', routes.auth)
+app.use('/api/auth', routes.auth);
+app.use('/post', routes.post);
 
 
 module.exports = app;

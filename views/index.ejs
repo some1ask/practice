@@ -4,32 +4,7 @@
           
         </div>
         <% if(!user._id && !user.login) { %> 
-        <div class="forms">
-            <div class="logform" id="">
-                <form action="" method="POST" name="login_form">
-                    <label for="login-login">Логин</label><br></p> 
-                    <input type="text" id="login-login" name="login-login"><br>
-                    <label for="password-login">Пароль</label><br>
-                    <input type="password" id="password-login" name="password-login"><br>
-                    <button type="submit" class="switch-button">Регистрация</button><br>
-                    <button type="submit" class="login-button">Войти</button>
-               
-                </form>
-            </div>
-            <div class="regform logform">
-                <form action="" method="POST" name="register_form">
-                    <label for="login-register">Логин</label><br></p> 
-                    <input type="text" id="login-register" name="login-register"><br>
-                    <label for="password-register">Пароль</label><br>
-                    <input type="password" id="password-register" name="password-register"><br>
-                    <label for="password-register-require">Повторите пароль</label><br>
-                    <input type="password" id="password-register-require" name="password-register-require"><br>
-                    <button type="submit" class="switch-button login-button">Вход</button><br>
-                    <button type="submit" class="register-button">Регистрация</button>
-                 
-                </form>
-            </div>
-        </div>
+        <% include form.ejs %>
         <% }else{  %>
         <p class="Hi">Привет <%= user.login %> ! </p> 
         <a href='/api/auth/logout'> Выход</a>
