@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const config = require('./config');
 const routes = require('./routes');
 const session = require('express-session');
+const staticAsset = require('static-asset');
 const MongoStore = require('connect-mongo')(session);
 
 //database 
@@ -29,6 +30,7 @@ mongoose.connect(config.MONGO_URL,{useNewUrlParser:true});
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.set('view engine','ejs');
+app.use(staticAsset(path.join(__dirname,'public')));
 app.use(express.static(path.join(__dirname ,'public')));
 app.use(session({
   secret: config.SESSION_SECRET,

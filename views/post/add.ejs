@@ -1,0 +1,26 @@
+<% include ../layout/header.ejs %>
+
+    <div class="wrapper">
+ <div class="container">
+          <div class="content">
+            <h2>Добавление поста</h2>
+            <form action="post" class="add-form">
+                <div class="form-group">
+                    <label for="title">Заголовок</label><br>
+                    <input name="title" type="text" class="form-control" id="title" aria-describedby="" required/>
+                  </div>
+                  <div class="form-group">
+                    <label for="">Описание</label><br>
+                    <textarea name="body" id="body" class="form-control" rows="10" cols="25" contenteditable="true"></textarea>
+                  </div>
+                  <div class="form-group">
+                      <button class="form-control-btn publish-btn">Опубликовать</button>
+                  </div>
+            </form>
+          </div>
+        </div>
+          <% include ../form.ejs %>
+    </div>
+
+
+<% include ../layout/footer.ejs %>

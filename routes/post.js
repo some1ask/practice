@@ -7,7 +7,7 @@ router.get('/add', (req,res)=>{
    const id = req.session.userId;
    const login = req.session.userLogin;
 
-   res.render('/post/add',{
+   res.render('post/add',{
     user:{
         id,
         login

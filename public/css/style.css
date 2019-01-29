@@ -78,6 +78,44 @@ footer {
   background: rgba(255, 255, 255, 0.3);
   border: 1px solid blue; }
 
+.content {
+  width: 800px;
+  border: 2px solid pink;
+  margin: 0 auto;
+  text-align: center; }
+  .content form {
+    position: relative;
+    font-size: 18px;
+    font-style: bold;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 20px 20px;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 1%; }
+  .content input {
+    font-size: 18px;
+    width: 750px;
+    font-style: bold;
+    padding: 0 10px;
+    border-radius: 5%; }
+  .content button {
+    padding: 10px 20px;
+    font-weight: 300;
+    font-size: 18px;
+    text-shadow: 0px 1px 0 rgba(0, 0, 0, 0.25);
+    background: #FA8072;
+    border: none;
+    margin-top: 10px; }
+    .content button:hover {
+      cursor: pointer; }
+  .content textarea {
+    width: 750px;
+    font-size: 18px;
+    font-style: bold;
+    padding: 0 10px;
+    border-radius: 1%; }
+
 * {
   margin: 0;
   padding: 0;
