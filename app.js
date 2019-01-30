@@ -42,9 +42,7 @@ app.use(session({
 }))
 
 //routes
-app.listen(config.PORT, function () {
-      console.log('Example app listening on port '+ config.PORT+ '!');
-    });
+
 app.get('/', function (req, res) {
   const id = req.session.userId;
   const login = req.session.userLogin;
@@ -56,8 +54,18 @@ app.get('/', function (req, res) {
     }
   });
 });
+
 app.use('/api/auth', routes.auth);
 app.use('/post', routes.post);
 
 
-module.exports = app;
+//errors
+// app.use((req, res, next) => {
+//   const err = new Error('Not Found');
+//   err.status = 404;
+//   next(err);
+// });
+
+app.listen(config.PORT, function () {
+  console.log('Example app listening on port '+ config.PORT+ '!');
+});

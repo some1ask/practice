@@ -55,6 +55,12 @@ router.post('/login',(req,res) => {
             error:"Все поля должны быть заполнены",
             fields:['login','passsword']
         })
+    }else if(!/^[a-zA-Z0-9]+$/.test(login)){
+        res.json({
+            ok:false,
+            error: "Только латинские буквы и цифры",
+            fields:['login']
+        }) 
     }else{
         model.User.findOne({
             login

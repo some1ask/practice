@@ -21,4 +21,4 @@ function watcher(){
 }
 
 
-gulp.task('default',watcher);
+gulp.task('default',build,watcher);

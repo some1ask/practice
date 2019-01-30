@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "cross-env PORT=3000 node app.js",
-    "dev": "nodemon app.js gulp"
+    "dev": "gulp & nodemon app.js "
   },
   "devDependencies": {
     "@types/core-js": "^2.5.0",
@@ -30,7 +30,9 @@
     "gulp-uglifyjs": "^0.6.2",
     "jquery": "^3.3.1",
     "mongoose": "^5.4.4",
+    "mongoose-url-slugs": "^1.0.2",
     "static-asset": "^0.6.0",
+    "transliter": "^2.2.1",
     "uglifyjs": "^2.4.11"
   }
 }

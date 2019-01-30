@@ -1,10 +1,9 @@
 <% include ../layout/header.ejs %>
-
-    <div class="wrapper">
+<div class="wrapper">
  <div class="container">
           <div class="content">
+            <form action="" method="post" class="add-form">
             <h2>Добавление поста</h2>
-            <form action="post" class="add-form">
                 <div class="form-group">
                     <label for="title">Заголовок</label><br>
                     <input name="title" type="text" class="form-control" id="title" aria-describedby="" required/>
@@ -19,8 +18,7 @@
             </form>
           </div>
         </div>
-          <% include ../form.ejs %>
-    </div>
+          <% include ../layout/form.ejs %>
 
-
+</div>
 <% include ../layout/footer.ejs %>

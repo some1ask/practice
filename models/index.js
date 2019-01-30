@@ -1,5 +1,5 @@
 
-const Post = require('./announcement');
+const Post = require('./post');
 const User = require('./user');
 
 module.exports = {

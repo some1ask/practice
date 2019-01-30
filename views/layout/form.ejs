@@ -1,5 +1,7 @@
 <div class="forms">
-            <div class="logform" id="">
+  <% if(!user._id && !user.login) { %> 
+     
+            <div class="logform">
                 <form action="" method="POST" name="login_form">
                     <label for="login-login">Логин</label><br></p> 
                     <input type="text" id="login-login" name="login-login"><br>
@@ -7,7 +9,6 @@
                     <input type="password" id="password-login" name="password-login"><br>
                     <button type="submit" class="switch-button">Регистрация</button><br>
                     <button type="submit" class="login-button">Войти</button>
-               
                 </form>
             </div>
             <div class="regform logform">
@@ -20,7 +21,11 @@
                     <input type="password" id="password-register-require" name="password-register-require"><br>
                     <button type="submit" class="switch-button login-button">Вход</button><br>
                     <button type="submit" class="register-button">Регистрация</button>
-                 
                 </form>
             </div>
+
+    <% }else{  %>
+        <p class="Hi">Привет <%= user.login %> ! </p> 
+        <a href='/api/auth/logout'> Выход</a>
+    <% }%>
         </div>

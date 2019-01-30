@@ -115,6 +115,19 @@ footer {
     font-style: bold;
     padding: 0 10px;
     border-radius: 1%; }
+  .content .error {
+    position: relative;
+    text-align: center;
+    background-color: #FA8072;
+    border-radius: 5%;
+    margin-top: 10px; }
+  .content .success {
+    position: relative;
+    text-align: center;
+    background-color: lightgreen;
+    padding: 10px 10px;
+    border-radius: 5%;
+    margin-top: 10px; }
 
 * {
   margin: 0;

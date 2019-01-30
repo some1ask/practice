@@ -3,12 +3,7 @@
         <div class="container">
           
         </div>
-        <% if(!user._id && !user.login) { %> 
-        <% include form.ejs %>
-        <% }else{  %>
-        <p class="Hi">Привет <%= user.login %> ! </p> 
-        <a href='/api/auth/logout'> Выход</a>
-        <% }%>
-
+      
+  <% include layout/form.ejs %>
     </div>
 <% include layout/footer.ejs %>
