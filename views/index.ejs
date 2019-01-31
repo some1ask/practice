@@ -1,9 +1,37 @@
 <% include layout/header.ejs %>
     <div class="wrapper">
         <div class="container">
-          
+        <% for(var i=0;i< posts.length;i++){ %>
+            <div class="post__item">
+                <div class="post__header">
+                    <a href="/posts/<%= posts[i].url %>"><h3><%= posts[i].title %></h3></a>
+                </div>
+            <div class="post__body">
+                <div class="post__descr">
+                    <p>
+                    <%= posts[i].body %>
+                    </p>
+                </div>
+                <div class="post__author">
+                    <h5><%= posts[i].owner %></h5>
+                </div>
+            </div>
+        </div>
+        <%}%>
+         
+         <div class="pagination">
+            <% if(current >2) { %> 
+                <a href="/archive/<%= Number(current)-1%>" class="new">&#8592;Туда</a>
+            <%}%>
+            <%if(current == 2) { %> 
+                <a href="/" class="new">На главную</a>
+            <%}%>
+            <% if(pages > 0 && current < pages) { %> 
+                <a href="/archive/<%= Number(current)+1%>" class="old">Туда&#8594;</a>
+            <%}%>
+         </div>
         </div>
       
-  <% include layout/form.ejs %>
+        <% include layout/form.ejs %>
     </div>
 <% include layout/footer.ejs %>

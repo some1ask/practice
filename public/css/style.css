@@ -6,50 +6,53 @@ header {
   height: 50px;
   align-items: center;
   height: 50px;
-  border: 1px solid blue;
   padding: 10px 0; }
+  header a {
+    text-decoration: none;
+    color: black; }
 
 .wrapper {
-  margin: 20px 30px;
   display: flex;
   flex-direction: row;
-  border: 2px solid green;
+  justify-content: space-between;
+  margin: 0 20px;
   box-sizing: content-box;
   position: relative; }
 
-.container {
-  border: 1px solid black;
-  display: flex;
-  flex-direction: row;
-  flex-basis: 80%; }
+.usercab {
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  padding: 20px 20px;
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 270px; }
 
-.forms {
-  display: flex; }
-  .forms form {
-    position: relative;
+.forms form {
+  position: relative;
+  font-size: 18px;
+  font-style: bold;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  padding: 20px 5px;
+  border: 1px solid white;
+  border-radius: 5%; }
+  .forms form input {
     font-size: 18px;
     font-style: bold;
-    box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.4);
-    padding: 20px 20px;
-    text-align: center;
-    border: 1px solid white;
+    padding: 0 10px;
     border-radius: 5%; }
-    .forms form input {
-      font-size: 18px;
-      font-style: bold;
-      padding: 0 10px;
-      border-radius: 5%; }
-    .forms form button {
-      padding: 10px 20px;
-      font-weight: 300;
-      font-size: 18px;
-      text-shadow: 0px 1px 0 rgba(0, 0, 0, 0.25);
-      background: #FA8072;
-      border: none;
-      margin-top: 10px; }
-      .forms form button:hover {
-        cursor: pointer; }
+  .forms form button {
+    padding: 10px 20px;
+    font-weight: 300;
+    font-size: 18px;
+    text-shadow: 0px 1px 0 rgba(0, 0, 0, 0.25);
+    background: #FA8072;
+    border: none;
+    margin-top: 10px; }
+    .forms form button:hover {
+      cursor: pointer; }
 
 .regform {
   display: none; }
@@ -75,8 +78,7 @@ footer {
   width: 100%;
   display: flex;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.3);
-  border: 1px solid blue; }
+  background: rgba(255, 255, 255, 0.3); }
 
 .content {
   width: 800px;
@@ -129,6 +131,22 @@ footer {
     border-radius: 5%;
     margin-top: 10px; }
 
+.post__item {
+  background: rgba(255, 255, 255, 0.4);
+  margin-bottom: 20px;
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 1000px;
+  padding: 5px 10px; }
+
+.post__header {
+  text-align: center; }
+
+.post__descr p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
 * {
   margin: 0;
   padding: 0;
@@ -137,5 +155,10 @@ footer {
 body {
   background: url("/images/bg.jpg");
   background-size: cover; }
+
+.pagination .new {
+  float: left; }
+.pagination .old {
+  float: right; }
 
 /*# sourceMappingURL=style.css.map */

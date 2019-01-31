@@ -5,9 +5,7 @@ const bcrypt = require('bcrypt-nodejs');
 /*eslint-disable  */
 
 /*eslint-unable */
-
-//post register
-router.post('/register',(req,res) => {
+function regPerson(req,res){
     const login = req.body.login;
     const password = req.body.password;
     const reqPassword = req.body.reqPassword;
@@ -38,15 +36,13 @@ router.post('/register',(req,res) => {
             }).catch(err=>{
                 res.json({
                     ok:false,
-                    error:"Пользователь с таким именем уже существует"
+                    error:"Пользователь с таким именем<br> уже существует"
                 })
             })
         })
     }
-});
-
-//post login
-router.post('/login',(req,res) => {
+}
+function authPerson(req,res){
     const login = req.body.login;
     const password = req.body.password;
     if(!login || !password){
@@ -92,7 +88,13 @@ router.post('/login',(req,res) => {
             console.log(err);
         })
     }
-});
+}
+//post register
+router.post('/register',(req,res) => regPerson(req,res));
+//post login
+router.post('/login',(req,res) =>  authPerson(req,res));
+router.post('/archive/:page',(req,res)=>regPerson(req,res));
+
 
 router.get('/logout', (req,res)=>{
     if(req.session){
