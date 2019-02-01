@@ -78,6 +78,7 @@ function authPerson(req,res){
                     }else{
                         req.session.userId = user._id;
                         req.session.userLogin = user.login;
+                        console.log(req.session);
                         res.json({
                             ok:true
                         })

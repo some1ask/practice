@@ -5,6 +5,9 @@
             <div class="post__item">
                 <div class="post__header">
                     <h3><%= post.title %></h3>
+                    <% if(user.owner) {%>
+                        <button id="delete_post" class="post__delete">Удалить пост</button>
+                    <% } %>
                 </div>
             <div class="post__body">
                 <div class="post__fulldescr">

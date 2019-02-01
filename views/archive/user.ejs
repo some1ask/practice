@@ -18,13 +18,13 @@
          
          <div class="pagination">
             <% if(current >2) { %> 
-                <a href="/archive/<%= Number(current)-1%>" class="new">&#8592;Туда</a>
+                <a href="/users/<%= _user.login%>/<%= Number(current)-1%>" class="new">&#8592;Туда</a>
             <%}%>
             <%if(current == 2) { %> 
                 <a href="/" class="new">На главную</a>
             <%}%>
             <% if(pages > 0 && current < pages) { %> 
-                <a href="/archive/<%= Number(current)+1%>" class="old">Туда&#8594;</a>
+                <a href="/users/<%= _user.login%>/<%= Number(current)+1%>" class="old">Туда&#8594;</a>
             <%}%>
          </div>
         </div>

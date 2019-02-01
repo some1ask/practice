@@ -10,6 +10,7 @@ function build() {
             'dev/js/reg.js',
             'dev/js/addpost.js',
             'dev/js/mainscript.js',
+            'dev/js/deletepost.js'
           ])
           .pipe(concat('scripts.js'))
           .pipe(uglify())

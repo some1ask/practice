@@ -46,7 +46,7 @@ router.get('/posts/:post',(req,res,next)=>{
     const url = req.params.post.trim().replace(/ + (?= )/g, '');
     const userId = req.session.userId;
     const userLogin = req.session.userLogin;
-    const login = req.params.login;
+    //const login = req.params.login;
     if(!url){
         console.log(err);
     }else{
@@ -62,13 +62,30 @@ router.get('/posts/:post',(req,res,next)=>{
                     post,
                     user:{
                         id:userId,
-                        login:userLogin
+                        login:userLogin,
+                        owner: post.owner == userId 
                     }
                 })
             }
         })
     }
     
+})
+router.delete('/posts/:post',(req,res,next)=>{
+     const postId = req.params.post;
+    // model.Post.findByIdAndRemove({title:postId}, (err, todo) => {
+    //     console.log(postId);
+    //     if (err) return res.status(500).send(err);
+       
+    //     return res.status(200).send();
+    // });
+
+    model.Post.findOne({
+        url:postId
+    }).remove().exec();
+
+    return res.status(200).send();
+
 })
 
 //users posts
