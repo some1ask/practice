@@ -28,6 +28,7 @@
         <div class="usercab">
             <p class="Hi">Привет <%= user.login %> ! </p> 
             <a href='/post/add'> Добавить пост</a><br>
+            <a href='/users/<%= user.login%>'> Мои посты</a><br>
             <a href='/api/auth/logout'> Выход</a>
         </div>
     <% }%>

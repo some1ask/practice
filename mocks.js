@@ -3,11 +3,11 @@ const faker = require('faker');
 
 const model = require('./models');
 
-const owner = '5c51d0f398429229607171e9';
+const owner = '5c5426217bb938220c98de09';
 
 module.exports = () =>{
     model.Post.remove().then(()=>{
-        Array.from({length: 40}).forEach((_,i)=>{
+        Array.from({length: 10}).forEach((_,i)=>{
             model.Post.create({
                 title:faker.lorem.words(5),
                 body:faker.lorem.words(20),
