@@ -81,10 +81,9 @@ footer {
   background: rgba(255, 255, 255, 0.3); }
 
 .content {
-  width: 800px;
-  border: 2px solid pink;
   margin: 0 auto;
-  text-align: center; }
+  text-align: center;
+  width: 1000px; }
   .content form {
     position: relative;
     font-size: 18px;
@@ -147,6 +146,17 @@ footer {
   text-overflow: ellipsis;
   white-space: nowrap; }
 
+.post__delete {
+  display: block;
+  width: 100px;
+  text-align: center;
+  border: none;
+  margin: 0 auto;
+  padding: 5px;
+  background: salmon; }
+  .post__delete:hover {
+    cursor: pointer; }
+
 * {
   margin: 0;
   padding: 0;
@@ -159,6 +169,15 @@ body {
   background: url("/images/bg.jpg");
   background-size: cover; }
 
+.pagination a {
+  color: black; }
+.pagination .page__btn {
+  display: block;
+  width: 100px;
+  text-align: center;
+  border-radius: 2%;
+  padding: 5px;
+  background: salmon; }
 .pagination .new {
   float: left; }
 .pagination .old {

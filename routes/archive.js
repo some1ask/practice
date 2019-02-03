@@ -73,12 +73,6 @@ router.get('/posts/:post',(req,res,next)=>{
 })
 router.delete('/posts/:post',(req,res,next)=>{
      const postId = req.params.post;
-    // model.Post.findByIdAndRemove({title:postId}, (err, todo) => {
-    //     console.log(postId);
-    //     if (err) return res.status(500).send(err);
-       
-    //     return res.status(200).send();
-    // });
 
     model.Post.findOne({
         url:postId
